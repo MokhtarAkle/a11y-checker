@@ -17,12 +17,11 @@ app.get('/', function (req, res) {
     
         // console.log('POLICIES', results.report.summary.policies)
         //console.log('RAW RESULTS', results.report.results)
-        console.log('REPORT', report)
+        console.log('REPORT', results.report.summary)
 
-        //res.send(results.report.results)
-        // aChecker.getRuleset('WCAG_2_2').then(data => {
-        //     res.send(data.checkpoints)
-        // })
+        aChecker.getRuleset('WCAG_2_2').then(data => {
+            console.log(data.checkpoints[0].rules)
+        })
     })
     
     // aChecker.getRuleset('WCAG_2_2').then(data => console.log(JSON.parse(data.checkpoints)))
@@ -30,5 +29,5 @@ app.get('/', function (req, res) {
     // console.log('aChecker', aChecker)
 })
 
-app.listen(3000)
+app.listen(3001)
 
